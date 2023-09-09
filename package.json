@@ -1,7 +1,7 @@
 {
   "name": "expo-music-library",
   "version": "0.1.0",
-  "description": "React Native Expo Native music library to retrieve sons albums, genres, artists, folders",
+  "description": "React Native Expo Native music library to retrieve song's albums, genres, artists, folders",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {

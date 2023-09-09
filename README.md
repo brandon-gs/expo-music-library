@@ -1,35 +1,99 @@
 # expo-music-library
 
-React Native Expo Native music library to retrieve sons albums, genres, artists, folders
+React Native Expo Native music library to retrieve song's albums, genres, artists, folders.
+(Only for working for android at the time being, Need a macbook to implements IOS part)
 
-# API documentation
+## Table Of contents
 
-- [Documentation for the main branch](https://github.com/expo/expo/blob/main/docs/pages/versions/unversioned/sdk/music-library.md)
-- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/music-library/)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+- [Buy me a coffee](#buy-me-a-coffee)
 
-# Installation in managed Expo projects
-
-For [managed](https://docs.expo.dev/archive/managed-vs-bare/) Expo projects, please follow the installation instructions in the [API documentation for the latest stable release](#api-documentation). If you follow the link and there is no documentation available then this library is not yet usable within managed projects &mdash; it is likely to be included in an upcoming Expo SDK release.
-
-# Installation in bare React Native projects
-
-For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
-
-### Add the package to your npm dependencies
+## Installation
 
 ```
-npm install expo-music-library
+ npm install expo-music-library
 ```
 
-### Configure for iOS
+## Usage
 
-Run `npx pod-install` after installing the npm package.
+- Import
 
+```
+import * as MedialLibrary from "expo-music-library";
+```
 
-### Configure for Android
+- Request permission to access storage
 
+  ```
+      let permissions = await MusicLibrary.requestPermissionsAsync();
+      while (!permissions.granted) {
+      permissions = await MusicLibrary.requestPermissionsAsync();
+      }
+  ```
 
+## API Reference
 
-# Contributing
+- Retrieve Audio files
 
-Contributions are very welcome! Please refer to guidelines described in the [contributing guide]( https://github.com/expo/expo#contributing).
+  ```
+      const results = await MusicLibrary.getAssetsAsync({
+      after: lastMediaAsset,
+      mediaType: MusicLibrary.MediaType.audio,
+      sortBy: sortBy,
+      });
+  ```
+
+- Retrieve Albums
+
+  ```
+      const folders = await MusicLibrary.getAlbumsAsync()
+  ```
+
+- Retrieve Album's Songs
+
+  ```
+      const albumAssets = await MusicLibrary.getAlbumAssetsAsync(albumName)
+  ```
+
+- Retrieve Artists
+
+  ```
+      const artists = await MusicLibrary.getArtistsAsync()
+  ```
+
+- Retrieve Artist's Songs
+
+  ```
+      const artistAssets = await MusicLibrary.getArtistAssetsAsync(artistId)
+  ```
+
+- Retrieve Folders
+
+  ```
+      const folders = await MusicLibrary.getFoldersAsync()
+  ```
+
+- Retrieve Folder's Songs
+
+  ```
+      const folderAssets = await MusicLibrary.getFolderAssetsAsync(folderId)
+  ```
+
+- Retrieve Genres
+
+  ```
+      const genres = await MusicLibrary.getGenresAsync()
+  ```
+
+- Retrieve Genre's Songs
+
+  ```
+      const genreAssets = await MusicLibrary.getGenreAssetsAsync(genreId)
+  ```
+
+## Buy me a coffee
+
+If my you find my work usefull and want to support me, kindly buy me a coffee here ->
+<a href="https://www.buymeacoffee.com/fullstapp" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
