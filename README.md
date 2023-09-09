@@ -27,10 +27,10 @@ import * as MedialLibrary from "expo-music-library";
 - Request permission to access storage
 
   ```
-      let permissions = await MusicLibrary.requestPermissionsAsync();
-      while (!permissions.granted) {
-      permissions = await MusicLibrary.requestPermissionsAsync();
-      }
+        let permissions = await MusicLibrary.requestPermissionsAsync();
+        while (!permissions.granted) {
+            permissions = await MusicLibrary.requestPermissionsAsync();
+        }
   ```
 
 ## API Reference
@@ -38,11 +38,11 @@ import * as MedialLibrary from "expo-music-library";
 - Retrieve Audio files
 
   ```
-      const results = await MusicLibrary.getAssetsAsync({
-      after: lastMediaAsset,
-      mediaType: MusicLibrary.MediaType.audio,
-      sortBy: sortBy,
-      });
+        const results = await MusicLibrary.getAssetsAsync({
+            after: lastMediaAsset,
+            mediaType: MusicLibrary.MediaType.audio,
+            sortBy: sortBy,
+        });
   ```
 
 - Retrieve Albums
@@ -95,5 +95,5 @@ import * as MedialLibrary from "expo-music-library";
 
 ## Buy me a coffee
 
-If my you find my work usefull and want to support me, kindly buy me a coffee here ->
+If my you find my work usefull and want to support me, kindly buy me a coffee here
 <a href="https://www.buymeacoffee.com/fullstapp" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
