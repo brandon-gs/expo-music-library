@@ -42,6 +42,7 @@ fun putAssetsInfo(
         val path = cursor.getString(localUriIndex)
         val localUri = "file://$path"
         val artworkUri: Uri = Uri.parse("content://media/external/audio/media/${assetId}/albumart")
+        val mediaType = cursor.getInt(mediaTypeIndex)
 
         val asset = Bundle().apply {
             putString("id", assetId)
@@ -50,7 +51,7 @@ fun putAssetsInfo(
             putString("artwork", artworkUri.toString())
             putString("filename", cursor.getString(filenameIndex))
             putString("uri", localUri)
-            putString("mediaType", MediaType.AUDIO.apiName)
+            putString("mediaType", mediaType)
             putLong("creationTime", cursor.getLong(creationDateIndex))
             putDouble("modificationTime", cursor.getLong(modificationDateIndex) * 1000.0)
             putDouble("duration", cursor.getInt(durationIndex) / 1000.0)
