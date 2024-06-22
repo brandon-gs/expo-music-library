@@ -16,7 +16,7 @@ const val ERROR_NO_PERMISSIONS_MESSAGE = "Missing MEDIA_LIBRARY permissions."
 const val ERROR_NO_WRITE_PERMISSION_MESSAGE = "Missing MEDIA_LIBRARY write permission."
 const val ERROR_USER_DID_NOT_GRANT_WRITE_PERMISSIONS_MESSAGE = "User didn't grant write permission to requested files."
 
-val EXTERNAL_CONTENT_URI: Uri = MediaStore.Files.getContentUri("external")
+val EXTERNAL_CONTENT_URI: Uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
 
 val ASSET_PROJECTION = arrayOf(
   MediaStore.Audio.Media._ID,
